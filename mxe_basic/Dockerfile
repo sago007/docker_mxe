@@ -6,7 +6,9 @@ RUN echo "deb http://pkg.mxe.cc/repos/apt/debian wheezy main" > \
    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D43A795B73B16ABE9643FE1AFD8FFF16DB45C6AB && \
    apt-get update && \
    apt-get install -y mxe-i686-w64-mingw32.static-gcc \
-   nsis
+   nsis \
+   zip \
+   libtool
 #All packages!
 #RUN apt-get update && wget -O - http://pkg.mxe.cc/repos/apt/debian/dists/jessie/main/binary-amd64/Packages | grep Package | awk '{print $2}' | xargs apt-get install -y
 
