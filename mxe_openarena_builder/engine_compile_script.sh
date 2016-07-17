@@ -6,6 +6,12 @@ git clone git://github.com/OpenArena/engine.git
 cd engine
 VERSION_ID=$(git log -1 --date=short --format="openarena_engine_windows_%cd_%H")
 echo $VERSION_ID
+ZIPFILE="/data/${VERSION_ID}.zip"
+if [ -e "$ZIPFILE" ]
+then
+ echo "$ZIPFILE exist -> UP TO DATE"
+ exit 1
+fi
 STAGING_DIR=/staging/$VERSION_ID
 mkdir $STAGING_DIR
 #make
