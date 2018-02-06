@@ -10,11 +10,12 @@ VOLUME ["/data"]
 
 COPY engine_compile_script.sh /opt/
 
-#ADD http://files.poulsander.com/~poul19/public_files/libxmp-4.3.13.tar.gz /tmp/
+ADD https://github.com/cmatsuoka/libxmp/archive/libxmp-4.4.1.tar.gz /tmp/libxmp-4.4.1.tar.gz
 
-#RUN chmod 666 /tmp/libxmp-4.3.13.tar.gz
+RUN chmod 666 /tmp/libxmp-4.4.1.tar.gz
 
 #This does not create a correct static library. We likely need to generate a new configure file that supports cross compiling static libraries or libxmp needs a fix.
-#RUN cd /tmp && tar -xzf  libxmp-4.3.13.tar.gz && cd libxmp* && ./configure --host=i686-w64-mingw32.static --enable-static --disable-shared && make && cp /tmp/libxmp-4.3.13/lib/libxmp.a /usr/lib/mxe/usr/i686-w64-mingw32.static/lib/
+RUN cd /tmp && tar -xzf  libxmp-4.4.1.tar.gz && cd libxmp-libxmp-4.4.1 && autoconf && ./configure --host=i686-w64-mingw32.static --enable-static --disable-shared && make BUILDING_STATIC=1 && \
+cp /tmp/libxmp-libxmp-4.4.1/lib/libxmp.a /usr/lib/mxe/usr/i686-w64-mingw32.static/lib/ && cp /tmp/libxmp-libxmp-4.4.1/include/xmp.h /usr/lib/mxe/usr/i686-w64-mingw32.static/include/
 
 USER openarena
