@@ -2,7 +2,7 @@ FROM debian:9
 RUN apt-get update && apt-get install -y gnupg
 #Use http://mirror.mxe.cc/
 #First add the repository and install the static gcc compiler. This ensures that everything basic is setup.
-RUN echo "deb http://mirror.mxe.cc/repos/apt stretch main" > \
+RUN echo "deb http://pkg.mxe.cc/repos/apt stretch main" > \
    /etc/apt/sources.list.d/mxeapt.list && \
    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 86B72ED9 && \
    apt-get update && \
