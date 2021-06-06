@@ -9,5 +9,7 @@ Designed for crosscompiling Windows binaries with as little hassle as possible.
 ```
 docker build . -f mxe_basic/Dockerfile -t sago007/mxe_basic
 docker build . -f mxe_boost/Dockerfile -t sago007/mxe_boost
-docker build . -f mxe_blockattack/Dockerfile -t sago007/docker_blockattack
+cd mxe_blockattack
+docker build . -t sago007/docker_blockattack
+cd ..
 ```
