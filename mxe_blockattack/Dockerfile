@@ -23,4 +23,8 @@ RUN mkdir -p /staging/deps && cd /staging/deps && curl http://icculus.org/physfs
         -DPHYSFS_BUILD_TEST=FALSE \
 -DPHYSFS_BUILD_WX_TEST=FALSE && make && make install
 
+RUN mkdir -p /staging/deps && cd /staging/deps && curl https://files.poulsander.com/~poul19/public_files/fmt-8.1.0.tar.gz | tar -xz && cd fmt-8.1.0 && ls -lrt \
+&& cd /staging/deps/fmt-8.1.0 \
+&& i686-w64-mingw32.static-cmake . -DFMT_TEST=OFF -DFMT_INSTALL=ON -DFMT_MASTER_PROJECT=OFF && make && make install
+
 COPY build_it.sh /
