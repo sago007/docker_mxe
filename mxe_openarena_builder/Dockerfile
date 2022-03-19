@@ -1,6 +1,6 @@
 FROM sago007/mxe_basic
 MAINTAINER poul@poulsander.com
-RUN apt-get update && apt-get install -y mxe-i686-w64-mingw32.static-vorbis mxe-i686-w64-mingw32.static-sdl2 mxe-i686-w64-mingw32.static-sdl2 mxe-i686-w64-mingw32.static-openal zip
+RUN apt-get update && apt-get install -y mxe-i686-w64-mingw32.static-vorbis mxe-i686-w64-mingw32.static-curl mxe-i686-w64-mingw32.static-sdl2 mxe-i686-w64-mingw32.static-sdl2 mxe-i686-w64-mingw32.static-openal zip
 
 RUN adduser --disabled-password --gecos "OpenArena user" openarena && \
   mkdir -p /data && chmod 777 /data && \
