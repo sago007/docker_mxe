@@ -7,7 +7,7 @@ RUN apt-get update && \
    zip \
    nsis
 
-RUN make sdl2 sdl2_mixer sdl2_image sdl2_ttf physfs jsoncpp gettext freetype zlib
+RUN make cmake sdl2 sdl2_mixer sdl2_image sdl2_ttf physfs jsoncpp gettext freetype zlib
 
 
 COPY build_it.sh /
