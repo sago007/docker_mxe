@@ -46,7 +46,7 @@ RUN apt-get update && apt-get install -y \
 
 # Install MXE
 WORKDIR /usr/src
-RUN git clone https://github.com/mxe/mxe.git && cd mxe && git checkout cac2c6e842ed2bce55dc9fc3b39d0aaef4fd4fff
+RUN git clone https://github.com/sago007/sago_mxe.git mxe && cd mxe && git checkout gcc15
 WORKDIR /usr/src/mxe
 
 # Install MXE toolchain with gcc and SDL2
