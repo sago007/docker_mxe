@@ -46,11 +46,15 @@ RUN apt-get update && apt-get install -y \
 
 # Install MXE
 WORKDIR /usr/src
-RUN git clone https://github.com/sago007/sago_mxe.git mxe && cd mxe && git checkout gcc15
+RUN git clone https://github.com/mxe/mxe.git mxe && cd mxe
 WORKDIR /usr/src/mxe
+
+# Apply patches to use gcc 15 instead of gcc 11
+RUN cp /usr/src/mxe/plugins/gcc15/gcc15-overlay.mk /usr/src/mxe/src/ && cp /usr/src/mxe/plugins/gcc15/gcc15.patch /usr/src/mxe/src/
 
 # Install MXE toolchain with gcc and SDL2
 RUN make gcc
+
 
 # Set environment variables for MXE
 ENV PATH=/usr/src/mxe/usr/bin:$PATH
