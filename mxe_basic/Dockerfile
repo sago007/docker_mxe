@@ -21,7 +21,8 @@ RUN apt-get update && apt-get install -y \
     libgdk-pixbuf2.0-dev \
     libltdl-dev \
     libgl-dev \
-    libpcre3-dev \
+    libclang-dev \
+    libpcre2-dev \
     libssl-dev \
     libtool-bin \
     libxml-parser-perl \
@@ -35,6 +36,7 @@ RUN apt-get update && apt-get install -y \
     python3-mako \
     python3-packaging \
     python3-pkg-resources \
+    python3-setuptools \
     python-is-python3 \
     ruby \
     sed \
