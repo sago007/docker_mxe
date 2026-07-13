@@ -12,4 +12,5 @@ docker build . -f mxe_boost/Dockerfile -t sago007/mxe_boost
 cd mxe_blockattack
 docker build . -t sago007/docker_blockattack
 cd ..
+docker build . -f mxe_qt6/Dockerfile -t sago007/mxe_qt6
 ```

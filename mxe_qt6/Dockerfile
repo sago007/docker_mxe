@@ -11,22 +11,23 @@ RUN apt-get update && \
    python3-setuptools
 
 
-RUN make qt6 \
-qt6-conf	\
-qt6-qt5compat	\
-qt6-qtbase	\
-qt6-qtcharts	\
-qt6-qtdeclarative	\
-qt6-qthttpserver	\
-qt6-qtimageformats	\
-qt6-qtmultimedia	\
-qt6-qtquicktimeline	\
-qt6-qtscxml	\
-qt6-qtserialbus	\
-qt6-qtserialport	\
-qt6-qtservice	\
-qt6-qtshadertools	\
-qt6-qtsvg	\
-qt6-qttools	\
-qt6-qttranslations \
-gettext
+#RUN make qt6
+RUN make qt6-conf
+RUN make qt6-qt5compat
+RUN make qt6-qtbase
+RUN make qt6-qtcharts
+RUN make qt6-qtdeclarative
+RUN make qt6-qthttpserver
+RUN make qt6-qtimageformats
+#RUN make qt6-qtmultimedia
+RUN make qt6-qtquicktimeline
+RUN make qt6-qtscxml
+RUN make qt6-qtserialbus
+RUN make qt6-qtserialport
+RUN make qt6-qtservice
+RUN make qt6-qtshadertools
+RUN make qt6-qtsvg
+RUN make qt6-qttools
+RUN make qt6-qttranslations
+RUN make gettext
+RUN make exiv2 libiconv
